@@ -1,3 +1,6 @@
+@import "helper";
+@import url('https://fonts.googleapis.com/css?family=Amiri:400,700|Montserrat&display=swap');
+
 $color1: #23374d;
 $color2: #1089ff;
 $color3: #e5e5e5;
@@ -5,7 +8,6 @@ $color4: #eeeeee;
 
 #home {
     background: $color4;
-    overflow: hidden;
 }
 
 .home-bg {
@@ -20,7 +22,7 @@ $color4: #eeeeee;
 
     .part {
         position: absolute;
-        width: 120vw;
+        width: 100%;
         background-color: $color2;
         z-index: 90;
     }
@@ -42,49 +44,151 @@ $color4: #eeeeee;
     }
 }
 
-@import url('https://fonts.googleapis.com/css?family=Amiri:400,700|Montserrat&display=swap');
-
 .home-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    @include center-element;
     transform: translate(-50%, -50%) rotate(3deg);
+
     z-index: 110;
-    color: white;
+    width: 95vw;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
 
-    .avatar {
-        padding: 0.25em;
-        border: 1px solid $color3;
-        border-radius: 100%;
-
-        //border: solid 1px rgba(255, 255, 255, 0.35);
-        //background-color: rgba(255, 255, 255, 0.1);
+    @include respond-above(xs) {
+        width: 90vw;
     }
 
-    .avatar img {
+    @include respond-above(sm) {
+        width: 80vw;
+    }
+
+    @include respond-above(md) {
+        width: 70vw;
+    }
+
+    @include respond-above(md) {
+        width: 60vw;
+    }
+
+    @include respond-above(lg) {
+        width: 50vw;
+    }
+
+    .info-card {
+        padding: 50px 30px 30px 30px;
+        background-color: white;
+        color: $color1;
+        font-family: 'Amiri', sans-serif;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+
+        @include respond-below(sm) {
+            //padding: 17px 10px 10px;
+            font-size: .8em;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    .avatar {
+        flex-shrink: 2;
+        padding: 0.25em;
+        border: 1px solid $color3;
         border-radius: 100%;
         width: 100%;
         height: auto;
     }
 
-    .info-card {
-        padding: 57px 50px 15px 50px;
-        background-color:white;
-        color: $color1;
-        font-family: 'Amiri', sans-serif;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    .avatar img {
+        border-radius: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include respond-above(sm) {
+        .avatar {
+            max-width: 230px;
+            min-width: 180px;
+        }
+    }
+
+    @include respond-below(sm) {
+        .avatar {
+            max-width: 200px;
+            min-width: 130px;
+        }
+    }
+
+    .info-text {
+        text-align: center;
+        flex-grow: 2;
+        margin-left: 20px;
 
         .greeting {
             font-size: 3em;
-            font-weight: 700;
+            font-weight: 400;
         }
 
         .name {
+            font-weight: 700;
         }
 
         .description {
             font-size: 1.5em;
             font-family: 'Montserrat', sans-serif;
+        }
+    }
+
+
+    .social-icons {
+        height: 65px;
+        background-color: $color1;
+        font-family: 'Amiri', sans-serif;
+
+        .social-links {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .btn-social {
+            color: white;
+            height: 100%;
+            border-radius: 0;
+            transition: all 0.3s;
+            font-size: 1.3em;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-social > * {
+            transition: transform 0.3s;
+        }
+
+        .btn-social:hover {
+            background-color: #0f2339;
+        }
+
+        .btn-social:hover > * {
+            transform: translateY(-2px);
+        }
+
+        .btn-linkedin:hover {
+            color: #0077b5;
+        }
+
+        .btn-github:hover {
+            color: #6e5494;
+        }
+
+        .btn-instagram:hover {
+            color: #e1306c;
         }
     }
 }

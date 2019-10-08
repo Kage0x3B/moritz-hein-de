@@ -8,9 +8,15 @@ $color4: #eeeeee;
 @import "sidebar";
 @import "home-section";
 
-body {
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
     font-family: 'Poppins', sans-serif;
     background: $color3;
+    max-width: 100%;
     overflow-x: hidden;
 }
 
@@ -25,5 +31,22 @@ a:focus {
 section {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
+}
+
+//There are two ways for hiding the load overlay, one which has an animation and then hides it
+//and another one which hides it immediately if js is disabled because just setting the opacity to 0
+//still prevents clicks to elements underneath.
+#loadOverlay.hide {
+    opacity: 0;
+}
+
+#loadOverlay.hidden {
+    display: none;
+}
+
+.no-js {
+    #loadOverlay {
+        display: none;
+    }
 }

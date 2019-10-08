@@ -1,18 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>Moritz Hein</title>
-    <!-- Twitter Card data -->
+
+    <style>
+        .loading {
+            overflow: hidden;
+        }
+
+        #loadOverlay {
+            background-color: #eeeeee;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2000;
+            transition: opacity 0.7s;
+            overflow: hidden;
+        }
+
+        #loadAnimation {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+
+            border-top: 3px solid #1089ff;
+            border-right: 2px solid transparent;
+            animation: loadingAnimation 900ms linear infinite;
+        }
+
+        @keyframes loadingAnimation {
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        document.documentElement.classList.remove("no-js");
+        document.documentElement.classList.add("loading");
+    </script>
+
     <meta name="twitter:card" value="">
     <meta content="" name="Description"/>
-    <!-- Open Graph data -->
     <meta content="" property="og:title"/>
     <meta content="article" property="og:type"/>
-    <meta content="https://lifenautjoe.github.io/webpack-starter-basic/" property="og:url"/>
-    <meta content="https://i.snag.gy/i3eMBc.jpg" property="og:image"/>
+    <meta content="" property="og:url"/>
+    <meta content="" property="og:image"/>
     <meta content="" property="og:description"/>
     <!-- Mobile header color for Chrome, Firefox OS and Opera -->
     <meta content="#aaaaff" name="theme-color">
@@ -22,8 +63,10 @@
     <meta content="default" name="apple-mobile-web-app-status-bar-style">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
-
 <body>
+<div id="loadOverlay">
+    <div id="loadAnimation"></div>
+</div>
 <nav id="sidebar">
     <div id="dismiss">
         <i class="fas fa-arrow-left"></i>
@@ -85,27 +128,37 @@
             <div class="part"></div>
             <div class="part"></div>
 
-            <div class="home-container text-center">
-                <div class="info-card container">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="img-fluid img-thumbnail avatar">
-                                <picture>
-                                    <source srcset="<%= require('./assets/me.webp') %>" type="image/webp">
-                                    <source srcset="<%= require('./assets/me.jpg') %>" type="image/jpeg">
-                                    <img alt="Moritz Hein" src="<%= require('./assets/me.jpg') %>">
-                                </picture>
-                            </div>
-                        </div>
-                        <div class="col-8">
-                            <span class="greeting">Hi, I'm <span class="name">Moritz Hein</span></span>
-                            <br>
-                            <span class="description">-> Programmer <-</span>
-                        </div>
+            <div class="home-container">
+                <div class="info-card">
+                    <div class="avatar">
+                        <picture>
+                            <source srcset="<%= require('./assets/me.webp') %>" type="image/webp">
+                            <source srcset="<%= require('./assets/me.jpg') %>" type="image/jpeg">
+                            <img alt="Moritz Hein" src="<%= require('./assets/me.jpg') %>">
+                        </picture>
                     </div>
-                    <hr class="mt-5 m-3">
-                    <div class="row text-center">
-                        <div class="col">yeaaah some links to linked in, mail, insta maybe</div>
+                    <div class="info-text">
+                        <span class="greeting">Hello, I'm <span class="name">Moritz Hein</span></span>
+                        <div class="description">-> Programmer <-</div>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <div aria-label="Social links" class="social-links" role="group">
+                        <a class="btn btn-social btn-linkedin"
+                           href="https://www.linkedin.com/in/moritz-hein-a7592b189/"
+                           role="button" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"
+                                                            title="LinkedIn"></i><span
+                            class="sr-only">LinkedIn</span></a>
+                        <a class="btn btn-social btn-github"
+                           href="https://github.com/Kage0x3B"
+                           role="button" target="_blank"><i aria-hidden="true" class="fab fa-github"
+                                                            title="Github"></i><span
+                            class="sr-only">Github</span></a>
+                        <a class="btn btn-social btn-instagram"
+                           href="https://www.instagram.com/moritz.hein/"
+                           role="button" target="_blank"><i aria-hidden="true" class="fab fa-instagram"
+                                                            title="Instagram"></i><span
+                            class="sr-only">Instagram</span></a>
                     </div>
                 </div>
             </div>

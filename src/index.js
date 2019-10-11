@@ -37,5 +37,5 @@ jQuery(function () {
         overlayElem.addClass("hidden");
         overlayElem.attr("hidden", true);
         jQuery("html").removeClass("loading");
-    }, 2700);
+    }, 700);
 });

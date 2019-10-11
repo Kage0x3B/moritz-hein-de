@@ -41,6 +41,18 @@ footer {
     color: #999;
 }
 
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -.125em;
+}
+
 //There are two ways for hiding the load overlay, one which has an animation and then hides it
 //and another one which hides it immediately if js is disabled because just setting the opacity to 0
 //still prevents clicks to elements underneath.

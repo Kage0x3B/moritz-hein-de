@@ -3,8 +3,6 @@ import './styles/index.scss';
 import jQuery from 'jquery';
 import "popper.js";
 import 'bootstrap/dist/js/bootstrap';
-//import '@fortawesome/fontawesome-free/js/all';
-import './fontawesome';
 
 //import './sidebar';
 

@@ -10,7 +10,10 @@ const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
     devtool: 'source-map',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+        impressum: './src/impressum.js'
+    },
     output: {
         filename: '[name].[hash:20].js',
         path: buildPath
@@ -99,14 +102,21 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'index.html',
             template: './src/index.html',
-            // Inject the js bundle at the end of the body of the given template
             inject: 'body',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'impressum.html',
+            template: './src/impressum.html',
+            inject: 'body',
+            chunks: ['impressum']
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({
             // Your source logo
-            logo: './src/assets/icon.png',
+            logo: './src/assets/favicon.png',
             // The prefix for all image files (might be a folder or a name)
             prefix: 'icons-[hash]/',
             // Generate a cache file with control hashes and
@@ -115,9 +125,15 @@ module.exports = {
             // Inject the html into the html-webpack-plugin
             inject: true,
             // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+            theme_color: '#23374d',
             background: '#fff',
             // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-            title: 'moritz-hein-de',
+            title: 'Moritz Hein',
+            appName: 'Moritz Hein',
+            appDescription: 'Software Developer',
+            developerName: 'Moritz Hein',
+            developerURL: 'https://moritz-hein.de',
+            lang: "en-US",
 
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {
@@ -145,7 +161,7 @@ module.exports = {
                 discardComments: {
                     removeAll: true
                 },
-                discardUnused: false
+                discardUnused: true
             },
             canPrint: true
         })

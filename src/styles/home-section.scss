@@ -72,6 +72,14 @@ $color4: #eeeeee;
         width: 50vw;
     }
 
+    //Tried fixing landscape on tiny phones a little bit
+    @media screen and (orientation:landscape) and (max-height: 500px) {
+        top: 50vh;
+        transform: translate(-50%, -50vh) rotate(3deg);
+        width: 50vw;
+        height: 50vh;
+    }
+
     .info-card {
         padding: 50px 30px 30px 30px;
         background-color: white;
@@ -85,10 +93,13 @@ $color4: #eeeeee;
         justify-content: space-around;
 
         @include respond-below(sm) {
-            //padding: 17px 10px 10px;
             font-size: .8em;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        @media screen and (orientation:landscape) and (max-height: 500px) {
+            font-size: .6em;
         }
     }
 
@@ -138,6 +149,7 @@ $color4: #eeeeee;
         .description {
             font-size: 1.5em;
             font-family: 'Montserrat', sans-serif;
+            color: #3a4c61;
         }
     }
 
@@ -179,6 +191,10 @@ $color4: #eeeeee;
             transform: translateY(-2px);
         }
 
+        .btn-email:hover {
+            color: #239ab9;
+        }
+
         .btn-linkedin:hover {
             color: #0077b5;
         }
@@ -189,6 +205,10 @@ $color4: #eeeeee;
 
         .btn-instagram:hover {
             color: #e1306c;
+        }
+
+        .btn-linkedin, .btn-github {
+            font-size: 1.6em;
         }
     }
 }

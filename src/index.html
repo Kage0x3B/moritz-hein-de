@@ -2,10 +2,11 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport">
     <title>Moritz Hein</title>
 
     <style>
+        /* This class is applied to the html tag when Javascript is enabled */
         .loading {
             overflow: hidden;
         }
@@ -48,27 +49,25 @@
         document.documentElement.classList.add("loading");
     </script>
 
-    <meta name="twitter:card" value="">
-    <meta content="" name="Description"/>
-    <meta content="" property="og:title"/>
-    <meta content="article" property="og:type"/>
-    <meta content="" property="og:url"/>
-    <meta content="" property="og:image"/>
-    <meta content="" property="og:description"/>
-    <!-- Mobile header color for Chrome, Firefox OS and Opera -->
-    <meta content="#aaaaff" name="theme-color">
-    <!-- Mobile header color Windows Phone -->
-    <meta content="#aaaaff" name="msapplication-navbutton-color">
-    <!-- Mobile header color for iOS Safari (supports black, black-translucent or default) -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@HeinMoritz" />
+    <meta content="profile" property="og:type"/>
+    <meta property="og:title" content="Moritz Hein" />
+    <meta content="Moritz" property="og:profile:first_name"/>
+    <meta content="Hein" property="og:profile:first_name"/>
+    <meta property="og:url" content="http://moritz-hein.de" />
+    <meta property="og:description" content="Software Developer" />
+
+    <meta content="#23374d" name="theme-color">
+    <meta content="#23374d" name="msapplication-navbutton-color">
     <meta content="default" name="apple-mobile-web-app-status-bar-style">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 </head>
 <body>
 <div id="loadOverlay">
     <div id="loadAnimation"></div>
 </div>
 <nav id="sidebar">
-    <div id="dismiss">
+    <!--<div id="dismiss">
         <i class="fas fa-arrow-left"></i>
     </div>
 
@@ -112,16 +111,16 @@
         <li>
             <a href="#">Contact</a>
         </li>
-    </ul>
+    </ul>-->
 </nav>
 <main>
-    <div style="position: relative">
+    <!--<div style="position: relative">
         <button class="btn btn-menu" id="sidebarCollapse" type="button">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-    </div>
+    </div>-->
 
     <section id="home">
         <div class="home-bg">
@@ -132,18 +131,23 @@
                 <div class="info-card">
                     <div class="avatar">
                         <picture>
-                            <source srcset="<%= require('./assets/me.webp') %>" type="image/webp">
-                            <source srcset="<%= require('./assets/me.jpg') %>" type="image/jpeg">
-                            <img alt="Moritz Hein" src="<%= require('./assets/me.jpg') %>">
+                            <source srcset="<%= require('./assets/MoritzHein.webp') %>" type="image/webp">
+                            <source srcset="<%= require('./assets/MoritzHein.jpg') %>" type="image/jpeg">
+                            <img alt="Moritz Hein" src="<%= require('./assets/MoritzHein.jpg') %>">
                         </picture>
                     </div>
                     <div class="info-text">
                         <span class="greeting">Hello, I'm <span class="name">Moritz Hein</span></span>
-                        <div class="description">-> Programmer <-</div>
+                        <div class="description">Software Developer</div>
                     </div>
                 </div>
                 <div class="social-icons">
                     <div aria-label="Social links" class="social-links" role="group">
+                        <a class="btn btn-social btn-email"
+                           href="mailto:moritz.hein@live.de"
+                           role="button" target="_blank"><i aria-hidden="true" class="fab fa-paper-plane"
+                                                            title="E-Mail"></i><span
+                            class="sr-only">LinkedIn</span></a>
                         <a class="btn btn-social btn-linkedin"
                            href="https://www.linkedin.com/in/moritz-hein-a7592b189/"
                            role="button" target="_blank"><i aria-hidden="true" class="fab fa-linkedin-in"
@@ -165,6 +169,9 @@
         </div>
     </section>
 </main>
+<footer>
+    <small>&copy; Copyright 2019, Moritz Hein - <a href="impressum.html">Impressum</a></small>
+</footer>
 
 <div class="overlay"></div>
 </body>

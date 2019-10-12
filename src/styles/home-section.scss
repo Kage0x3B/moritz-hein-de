@@ -177,6 +177,29 @@ $color4: #eeeeee;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 0 15px;
+        }
+
+        @include respond-below(md) {
+             .btn-social {
+                 margin-right: 3%;
+             }
+         }
+
+        @include respond-below(sm) {
+            .btn-social {
+                margin-right: 5%;
+            }
+        }
+
+        @include respond-below(xs) {
+            .social-links {
+                justify-content: space-evenly;
+            }
+
+            .btn-social {
+                margin-right: 0;
+            }
         }
 
         .btn-social > * {

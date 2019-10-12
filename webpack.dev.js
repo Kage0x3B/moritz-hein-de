@@ -6,7 +6,7 @@ module.exports = {
     devtool: 'eval-cheap-module-source-map',
     entry: {
         index: './src/index.js',
-        impressum: './src/impressum.js'
+        impressum: './src/imprint.js'
     },
     devServer: {
         port: 8080,
@@ -104,8 +104,8 @@ module.exports = {
             chunks: ['index']
         }),
         new HtmlWebpackPlugin({
-            filename: 'impressum.html',
-            template: './src/impressum.html',
+            filename: 'imprint.html',
+            template: './src/imprint.html',
             inject: true,
             chunks: ['impressum']
         })

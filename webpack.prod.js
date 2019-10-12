@@ -12,7 +12,7 @@ module.exports = {
     devtool: 'source-map',
     entry: {
         index: './src/index.js',
-        impressum: './src/impressum.js'
+        imprint: './src/imprint.js'
     },
     output: {
         filename: '[name].[hash:20].js',
@@ -75,8 +75,7 @@ module.exports = {
                         }
                     }
                 ]
-            }
-            ,
+            },
             {
                 test: /\.(webp)$/,
                 use: [
@@ -87,8 +86,7 @@ module.exports = {
                         }
                     }
                 ]
-            }
-            ,
+            },
             {
                 // Load all icons
                 test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
@@ -105,13 +103,29 @@ module.exports = {
             filename: 'index.html',
             template: './src/index.html',
             inject: 'body',
-            chunks: ['index']
+            chunks: ['index'],
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
         }),
         new HtmlWebpackPlugin({
-            filename: 'impressum.html',
-            template: './src/impressum.html',
+            filename: 'imprint.html',
+            template: './src/imprint.html',
             inject: 'body',
-            chunks: ['impressum']
+            chunks: ['imprint'],
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            },
         }),
         new CleanWebpackPlugin(buildPath),
         new FaviconsWebpackPlugin({

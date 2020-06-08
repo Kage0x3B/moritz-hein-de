@@ -1,4 +1,4 @@
-# Moritz-Hein.de
+# Moritz-Hein.de [![Build Status](https://ci.syscy.de/buildStatus/icon?job=Moritz-Hein.de)](https://ci.syscy.de/job/Moritz-Hein.de/)
 
 This repository contains my personal website at https://Moritz-Hein.de.
 

@@ -77,8 +77,5 @@
     </section>
 </main>
 <footer>
-    <small
-        >&copy; Copyright {new Date().getFullYear()}, Moritz Hein -
-        <a href="/imprint" class="text-decoration-none">Imprint</a></small
-    >
+    <small>&copy; Copyright 2023, Moritz Hein - <a href="/imprint" class="text-decoration-none">Imprint</a></small>
 </footer>

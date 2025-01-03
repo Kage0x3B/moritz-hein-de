@@ -1,13 +1,17 @@
 <script lang="ts">
+    import '$lib/css/app.css';
+    import type { Snippet } from 'svelte';
+    import { page } from '$app/state';
+
     interface Props {
-        children?: import('svelte').Snippet;
+        children?: Snippet;
     }
 
     let { children }: Props = $props();
 </script>
 
 <svelte:head>
-    <title>Moritz Hein</title>
+    <link rel="canonical" href="https://moritz.website{page.url.pathname}" />
 </svelte:head>
 
 {@render children?.()}

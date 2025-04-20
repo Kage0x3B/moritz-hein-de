@@ -14,16 +14,18 @@
 
 <PageBackground />
 <div class="flex h-[100vh] w-full items-center justify-center">
-    <div class="card bg-base-100 min-w-xl overflow-hidden shadow-sm">
-        <div class="card-body flex flex-row items-center justify-around gap-8">
+    <div class="card bg-base-100 mx-2 overflow-hidden shadow-sm lg:min-w-xl">
+        <div class="card-body flex flex-col items-center gap-8 lg:flex-row lg:justify-around">
             <div class="avatar">
                 <div class="ring-offset-base-100 w-48 rounded-full ring ring-neutral-300 ring-offset-2">
                     <Img src={moritzHeinImg} />
                 </div>
             </div>
             <div class="px-8 text-center">
-                <h1 class="card-title font-display text-4xl font-medium">
-                    Hello, I'm <span class="font-bold">Moritz Hein</span>
+                <h1
+                    class="card-title font-display mb-4 flex flex-col text-4xl leading-8 font-medium lg:mb-2 lg:flex-row"
+                >
+                    <span class="text-nowrap">Hello, I'm</span> <span class="font-bold text-nowrap">Moritz Hein</span>
                 </h1>
                 <h2 class="text-accent/90 font-sans text-xl italic">Software Developer</h2>
             </div>
@@ -33,8 +35,9 @@
                 <a
                     href="mailto:moritz.hein@live.de"
                     class="btn btn-lg btn-ghost btn-accent group rounded-none !border-0 px-3 py-8 shadow-none hover:text-[#239ab9]"
-                    ><Fa6SolidPaperPlane class="size-6 transition-transform group-hover:-translate-y-0.5" /></a
                 >
+                    <Fa6SolidPaperPlane class="size-6 transition-transform group-hover:-translate-y-0.5" />
+                </a>
             </div>
             <div class="tooltip" data-tip="Connect with me on LinkedIn">
                 <a
@@ -42,8 +45,9 @@
                     rel="external"
                     target="_blank"
                     class="btn btn-lg btn-ghost btn-accent group rounded-none !border-0 px-3 py-8 shadow-none hover:text-[#0077b5]"
-                    ><Fa6BrandsLinkedinIn class="size-7 transition-transform group-hover:-translate-y-0.5" /></a
                 >
+                    <Fa6BrandsLinkedinIn class="size-7 transition-transform group-hover:-translate-y-0.5" />
+                </a>
             </div>
             <div class="tooltip" data-tip="Check out my projects on Github">
                 <a
@@ -51,8 +55,9 @@
                     rel="external"
                     target="_blank"
                     class="btn btn-lg btn-ghost btn-accent group rounded-none !border-0 px-3 py-8 shadow-none hover:text-[#6e5494]"
-                    ><Fa6BrandsGithub class="size-7 transition-transform group-hover:-translate-y-0.5" /></a
                 >
+                    <Fa6BrandsGithub class="size-7 transition-transform group-hover:-translate-y-0.5" />
+                </a>
             </div>
             <div class="tooltip" data-tip="Visit my Instagram">
                 <a
@@ -60,8 +65,9 @@
                     rel="external"
                     target="_blank"
                     class="btn btn-lg btn-ghost btn-accent group rounded-none !border-0 px-3 py-8 shadow-none hover:text-[#e1306c]"
-                    ><Fa6BrandsInstagram class="size-7 transition-transform group-hover:-translate-y-0.5" /></a
                 >
+                    <Fa6BrandsInstagram class="size-7 transition-transform group-hover:-translate-y-0.5" />
+                </a>
             </div>
         </div>
     </div>
